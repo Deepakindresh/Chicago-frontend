@@ -1,12 +1,10 @@
-"use client";
-
 import Button from "@/components/Button";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <Wrapper title="Home">
+    <Wrapper title="Analyse">
       <div className="flex flex-col h-max">
         <div className="w-full flex h-screen bg-black">
           <div className="flex w-[50%] h-full bg-blue justify-center items-center">
@@ -60,12 +58,7 @@ export default function Home() {
                 patterns across Chicago. Start your search today and uncover the
                 data that matters most to you.
               </p>
-              <Button
-                text="Search"
-                onClick={() => {
-                  window.location.href = "/search";
-                }}
-              />
+              <Button text="Search" />
             </div>
           </div>
           <div className="flex w-[50%] h-full bg-blue justify-center items-center">
@@ -99,12 +92,7 @@ export default function Home() {
                 helping you stay informed and aware. Start your analysis now and
                 uncover the insights behind Chicago&apos;s crime data.
               </p>
-              <Button
-                text="Analysis"
-                onClick={() => {
-                  window.location.href = "/analyse";
-                }}
-              />
+              <Button text="Analysis" />
             </div>
           </div>
         </div>
