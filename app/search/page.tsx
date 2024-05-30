@@ -4,9 +4,18 @@ import Button from "@/components/Button";
 import Loading from "@/components/Loading";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import dynamic from "next/dynamic";
 
 export default function Home() {
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("@/components/Map"), {
+        loading: () => <p>A map is loading</p>,
+        ssr: false,
+      }),
+    []
+  );
   //Get data from the flask API
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -287,6 +296,7 @@ export default function Home() {
             <p className="text-2xl">No data found or incorrect input</p>
           </div>
         )}
+        {responseData && !loading && <Map props={responseData} />}
       </div>
     </Wrapper>
   );
