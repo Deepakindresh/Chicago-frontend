@@ -174,7 +174,7 @@ export default function Home() {
               <div className="space-x-4">
                 <input
                   type="text"
-                  placeholder="(eg. HJ409180)"
+                  placeholder="(eg. HL428590)"
                   className="border-2 border-black p-2 rounded-lg my-4 text-black"
                   onChange={(e) => {
                     setSearchCaseNumber(e.target.value);
